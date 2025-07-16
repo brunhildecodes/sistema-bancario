@@ -7,6 +7,7 @@ class Sistema:
         self.fila_prioritaria = Fila()
         self.tamanho = 0
         self.historico = Pilha()
+        self.cancelamentos = 0
         # definir os atendimentos dos clientes por aqui:
 
 # esse já ta OK
@@ -48,9 +49,12 @@ class Sistema:
                 s4 += 1
             elif i['servico'] == 5:
                 s5 += 1
+            elif i['servico'] == 0:
+                s6 +=1
         print(f'Total de atendimentos: {len(self.historico.items)}')
         print(f'Total de atendimentos prioritários: {p}')
         print(f'Total de atendimentos comuns: {c}')
+        print(f'Total de atendimentos cancelados: {self.cancelamentos}')
         print(f'Serviços realizados:')
         print(f'Abrir conta: {s1} \nFechar conta: {s2}\nPagamento: {s3}\nDeposito: {s4}\nSaque: {s5}')
 
@@ -89,6 +93,7 @@ class Sistema:
                 self.cadastrar_cliente(cliente)
                 return 'Cliente de volta na fila.'
             else:
-                'Atendimento desfeito com sucesso!'
+               self.cancelamentos += 1
+            return 'Atendimento desfeito com sucesso!'
         else:
             None

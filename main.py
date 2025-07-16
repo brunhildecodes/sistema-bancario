@@ -54,7 +54,7 @@ while escolha != False:
     
                 # caso não, apenas desfaz o atendimento
                 else:
-                    s.desfazer_ultimo_atendimento(opcao)
+                    print(s.desfazer_ultimo_atendimento(opcao))
 
         # se o usuario digitar uma opção que não esteja no menu        
         case _:
