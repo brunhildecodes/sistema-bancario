@@ -49,8 +49,6 @@ class Sistema:
                 s4 += 1
             elif i['servico'] == 5:
                 s5 += 1
-            elif i['servico'] == 0:
-                s6 +=1
         print(f'Total de atendimentos: {len(self.historico.items)}')
         print(f'Total de atendimentos prioritários: {p}')
         print(f'Total de atendimentos comuns: {c}')
