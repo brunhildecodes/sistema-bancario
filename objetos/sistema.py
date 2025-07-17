@@ -84,14 +84,13 @@ class Sistema:
     
     def desfazer_ultimo_atendimento(self, escolha, servico = None):
         if self.historico:
+            self.cancelamentos += 1
             cliente = self.historico.pop()
             if escolha.lower() == 'sim':
                 if servico:
                     cliente['sevico'] = servico
                 self.cadastrar_cliente(cliente)
                 return 'Cliente de volta na fila.'
-            else:
-               self.cancelamentos += 1
             return 'Atendimento desfeito com sucesso!'
         else:
             None
